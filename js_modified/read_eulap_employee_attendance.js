@@ -40,6 +40,20 @@ function display_c(){
   display_c();
   }
 
+  function fullscreen() {
+    const fullscreenBtn = document.getElementById('fullscreen');
+
+    fullscreenBtn.addEventListener('click', function() {
+      if (fullscreenBtn.requestFullscreen) {
+        fullscreenBtn.requestFullscreen();
+      } else if (fullscreenBtn.webkitRequestFullscreen) { /* Safari */
+        fullscreenBtn.webkitRequestFullscreen();
+      } else if (fullscreenBtn.msRequestFullscreen) { /* IE11 */
+        fullscreenBtn.msRequestFullscreen();
+      }
+    });
+  }
+
   function processData() {    
         let tableRows = [];
     
