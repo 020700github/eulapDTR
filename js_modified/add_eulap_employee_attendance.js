@@ -134,8 +134,6 @@ function display_c(){
                     // add the time out to database
                     eulap_add_attendance_collection.collection('EMPLOYEE ID').doc(idNumber).update(data)
                     .then(() => {
-                      // the data will pass to other database collection or table fo the specific employee summary attendances
-                      const specific_employee_summary_of_attendances = firebase.firestore().collection('SPECIFIC EMPLOYEE SUMMARY OF ATTENDANCE');
                       const specificData = {
                       time_in: findTimeInOut.data().time_in,
                       time_out: currentDate,
@@ -144,10 +142,12 @@ function display_c(){
                       middleName: middleName,
                       lastName: lastName
                     }
+                    // the data will pass to other database collection or table fo the specific employee summary attendances
+                    const specific_employee_summary_of_attendances = firebase.firestore().collection('SPECIFIC EMPLOYEE SUMMARY OF ATTENDANCE');
 
                     specific_employee_summary_of_attendances.doc(idNumber).set(wakeUpDocumentPurpose);
                     
-                    specific_employee_summary_of_attendances.doc(idNumber).collection('LOG').doc().set(specificData)
+                    specific_employee_summary_of_attendances.doc(idNumber).collection('LOG').doc(formattedDate).set(specificData)
                     .then(() => {
                         alert('Time out success');
                         window.location.replace("../html_modified/read_eulap_employee_attendance.html");
