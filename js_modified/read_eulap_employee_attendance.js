@@ -110,18 +110,24 @@ function display_c(){
                         const eulap_attendance_collection = firebase.firestore().collection('eulap_register');
                         eulap_attendance_collection.doc(idNumber).onSnapshot((doc) => {
                           fullNameTd.addEventListener("click", function() {
-                            const company_position = doc.data().company_position
+                            const idNumber = doc.data().id_number
+                            const firstName = doc.data().firstname;
+                            const middleName = doc.data().middle_initial_name;
+                            const lastName = doc.data().lastname;
+                            const position = doc.data().company_position;
                             const age = doc.data().age;
                             const gender = doc.data().gender;
                             const address = doc.data().address;
                             const contact = doc.data().contact;
-                            alert("Selected Employee Information \n\n"
-                            +"Name: "+fullName+"\n"
-                            +"Company Position: "+company_position+"\n"
-                            +"Age:  "+age+"\n"
-                            +"Gender:  "+gender+"\n"
-                            +"Address:  "+address+"\n"
-                            +"Contact:  "+contact);
+                            alert('ID Number: ' + idNumber + '\n'
+                            + 'Firstname: ' + firstName + '\n'
+                            + 'Middlename: ' + middleName + '\n'
+                            + 'Lastname: ' + lastName + '\n'
+                            + 'Company position: ' + position + '\n'
+                            + 'Age: ' + age + '\n'
+                            + 'Gender: ' + gender + '\n'
+                            + 'Address: ' + address + '\n'
+                            + 'Contact: ' + contact);
                         });
                         });
           } else {
@@ -168,17 +174,24 @@ function display_c(){
                         const eulap_attendance_collection = firebase.firestore().collection('eulap_register');
                         eulap_attendance_collection.doc(idNumber).onSnapshot((doc) => {
                           fullNameTd.addEventListener("click", function() {
-                            const company_position = doc.data().company_position
+                            const idNumber = doc.data().id_number
+                            const firstName = doc.data().firstname;
+                            const middleName = doc.data().middle_initial_name;
+                            const lastName = doc.data().lastname;
+                            const position = doc.data().company_position;
                             const age = doc.data().age;
+                            const gender = doc.data().gender;
                             const address = doc.data().address;
                             const contact = doc.data().contact;
-                    
-                            alert("Selected Employee Information \n\n"
-                            +"Name: "+fullName+"\n"
-                            +"Company Position: "+company_position+"\n"
-                            +"Age:  "+age+"\n"
-                            +"Address:  "+address+"\n"
-                            +"Contact:  "+contact);
+                            alert('ID Number: ' + idNumber + '\n'
+                            + 'Firstname: ' + firstName + '\n'
+                            + 'Middlename: ' + middleName + '\n'
+                            + 'Lastname: ' + lastName + '\n'
+                            + 'Company position: ' + position + '\n'
+                            + 'Age: ' + age + '\n'
+                            + 'Gender: ' + gender + '\n'
+                            + 'Address: ' + address + '\n'
+                            + 'Contact: ' + contact);
                         });
                         });
           }
