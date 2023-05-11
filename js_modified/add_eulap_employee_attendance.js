@@ -52,7 +52,7 @@ function display_c(){
         const idNumberTd = document.createElement("td");
         const fullNameTd = document.createElement("td");
         const buttonTimeInTimeOutTd = document.createElement("td");
-
+        fullNameTd.className = "text-capitalize";
         const idNumber = doc.id;
         const fullName = doc.data().firstname + " " + doc.data().middle_initial_name + " " + doc.data().lastname;
        

@@ -56,6 +56,7 @@ eulap_firebase_database = {
         // Combine firstName, middleName, lastName into fullName
         const fullName = doc.data().firstname + " " + doc.data().middle_initial_name + " " + doc.data().lastname;
         // create style of button
+        fullNameTd.className = "text-capitalize";
         information_button.className = "btn btn-info m-1";
         information_button.innerText = "Update Info...";
         information_button.style.width = "100%";
@@ -65,6 +66,7 @@ eulap_firebase_database = {
         summaryOfDTR_button.className = "btn btn-warning m-1";
         summaryOfDTR_button.innerText = "DTR Summary";
         summaryOfDTR_button.style.width = "100%";
+        
         // put a create dbutton inside the td
         summaryOfDTRTd.appendChild(summaryOfDTR_button);
         informationTd.appendChild(information_button);

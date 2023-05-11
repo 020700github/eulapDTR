@@ -63,6 +63,7 @@ var eulap_firebase_database = {
             const timeOutTD = document.createElement("td");
             const totalWorkHoursTd = document.createElement("td");
             // digned the table in specific table data or td
+            fullNameTd.className = "text-capitalize";
             timeInTD.style.textAlign = "center";
             timeOutTD.style.textAlign = "center";
             totalWorkHoursTd.style.textAlign = "center";

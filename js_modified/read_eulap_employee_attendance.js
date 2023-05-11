@@ -75,6 +75,7 @@ function display_c(){
           timeInTD.style.fontWeight = "bold";
           timeOutTD.style.fontWeight = "bold";
           totalWorkHoursTd.style.fontWeight = "bold";
+          fullNameTd.className = "text-capitalize";
           // set up the data from database
           const idNumber = doc.id;
           //calling data from database and Combine firstName, middleName, lastName into fullName
